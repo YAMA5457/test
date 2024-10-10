@@ -9,9 +9,9 @@ type shikaku struct {
 
 type sum struct{}
 
-func (x sum) keisan(tate1 int, yoko1 int, tate2 int, yoko2 int) {
-	menseki1 := tate1 * yoko1
-	menseki2 := tate2 * yoko2
+func (x sum) keisan(shikaku1 *shikaku, shikaku2 *shikaku) {
+	menseki1 := shikaku1.tate * shikaku1.yoko
+	menseki2 := shikaku2.tate * shikaku2.yoko
 	fmt.Println(menseki1 + menseki2)
 }
 
@@ -35,5 +35,5 @@ func main() {
 	chouhoukei2.tate = 10
 	chouhoukei2.yoko = 10
 	kekka := new(sum)
-	kekka.keisan(chouhoukei1.tate, chouhoukei1.yoko, chouhoukei2.tate, chouhoukei2.yoko)
+	kekka.keisan(chouhoukei1, chouhoukei2)
 }
